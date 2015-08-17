@@ -10,7 +10,7 @@ Using these profiles(via DSP Algorithms) and NLP, we are modulating the speech c
 Technology Stack:
 -----------------
 
-Python | NLTK, matplotlib, numpy/scipy
-Neo4j
-C#	   | INTEL REALSENSE (TM) SDK
-MATLAB
+	1)Python | NLTK, matplotlib, numpy/scipy
+	2)Neo4j
+	3)C#     | INTEL REALSENSE (TM) SDK
+	4)MATLAB
