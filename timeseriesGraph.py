@@ -135,4 +135,4 @@ generalUtility.createMovie(arrImageFileNames, aviOutputFileName, \
     videoFps = fps, audioFileName = userPath + fName, \
     deleteImageFiles = deleteTmpFiles, fileNameStructure = fileNameStructure, \
     overwriteAviFile = True, videoBitrate = videoBitrate)
-print "done.
+print "done."

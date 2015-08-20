@@ -52,7 +52,7 @@ for fName in os.listdir(path):
             # create a new interval tier (you may want to change the tier label)
             intervalTier = praatTextGrid.PraatIntervalTier("myAnnotation")
             
-            # add an empty element to the interval tier (to prevent Praat from 
+            # add an empty element to the interval tier (to prevent Praat from
             # crashing when working with the generated TextGrid)
             intervalTier.add(0, duration, "")
             
