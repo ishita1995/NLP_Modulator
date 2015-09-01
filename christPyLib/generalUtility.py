@@ -388,8 +388,8 @@ def makeSystemCall(args):
 		consisting of stdoutdata, stderrdata
 	"""
 	import subprocess
-	msg = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-	#msg = subprocess.call(args) - recommended version; we don't use it, since we want to get back the system message
+	#msg = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
+	msg = subprocess.call(args) #- recommended version; we don't use it, since we want to get back the system message
 	return msg
 
 ##############################################################################
@@ -399,7 +399,7 @@ def createMovie(
 		aviOutputFileName, # full file name (including path) of the movie to be created
 		videoFps = 25, # output video frame rate
 		audioFileName = None, # name of the audio file that is included in the movie
-		deleteImageFiles = False, # if True, the temporary image files are deleted
+		deleteImageFiles = True, # if True, the temporary image files are deleted
 		fileNameStructure = '%d.png', # input file name structure
 		overwriteAviFile = True, # if True, a potentially existing output is overwritten
 		videoBitrate = 8000000,
@@ -418,9 +418,9 @@ def createMovie(
 	@param videoBitrate [bits/sec]; if zero, we'll create a virtually lossless 
 		movie
 	"""	
-	
+	#ffmpeg as ffmpeg64 for 64 bit version
 	outputPath = '/'.join(arrImageFileNames[0].split('/')[:-1]) + '/'
-	args = ['ffmpeg', '-r', str(videoFps), '-i', outputPath \
+	args = ['ffmpeg64', '-r', str(videoFps), '-i', outputPath \
 		+ fileNameStructure]
 	if audioFileName:
 		args += ['-i', audioFileName, '-acodec', 'pcm_s16le']
